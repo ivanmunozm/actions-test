@@ -2,6 +2,9 @@ name: 01a Hola Mundo
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - 'main'
 jobs:
   hola-mundo:
     runs-on: ubuntu-latest
