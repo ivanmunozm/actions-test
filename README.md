@@ -1,2 +1,2 @@
 # actions-test
-Repostirio para ejercicios de github actions
+Repostirio para ejercicios de github actions.
