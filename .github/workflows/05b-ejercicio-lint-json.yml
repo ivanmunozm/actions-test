@@ -1,0 +1,17 @@
+name: 05b - Ejercicio lint JSON
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: jsonlint
+      run: |
+        sudo apt-get install -y jsonlint
+    - name: lint
+      run: |
+        jsonlint-php package-lock.json
+   
