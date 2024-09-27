@@ -1,0 +1,25 @@
+name: 06b - Ejercicio expresiones
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  expressions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Inspeccionar github
+      id: githubContext
+      run: echo "${{ toJSON(github) }}"
+    - name: Evento y actor
+      id: eventoActor
+      run: |
+        echo "Evento disparador:${{ github.event_name }}"
+        echo "Lanzado por: ${{ github.actor }}"
+    - name: Filtro de objeto
+      id: stepsContext
+      run: |
+        echo "${{ toJSON(runner) }}"
+        
+
+
