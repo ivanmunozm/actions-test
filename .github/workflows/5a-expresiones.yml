@@ -1,0 +1,28 @@
+name: 05a - Expresiones
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  expressions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Operadores
+      id: operadores
+      run: echo "${{ 2 > 1}}"
+    - name: Inspeccionar github
+      id: githubContext
+      run: echo "${{ toJSON(github) }}"
+    - name: Evento y actor
+      id: eventoActor
+      run: |
+        echo "${{ toJSON(github.event_name) }}"
+        echo "${{ toJSON(github.actor) }}"
+    - name: Filtro de objeto
+      id: stepsContext
+      run: |
+        echo: "${{steps}}"
+        echo: "${{steps.*.conclusion}}"
+
+
