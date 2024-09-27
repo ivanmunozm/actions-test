@@ -22,7 +22,7 @@ jobs:
     - name: Filtro de objeto
       id: stepsContext
       run: |
-        echo "${{steps}}"
-        echo "${{steps.*.conclusion}}"
+        echo "${{ toJSON(steps) }}"
+        echo "${{ join(steps.*.conclusion) }}"
 
 
