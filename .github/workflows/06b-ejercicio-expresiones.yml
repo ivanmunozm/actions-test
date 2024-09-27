@@ -16,10 +16,9 @@ jobs:
       run: |
         echo "Evento disparador:${{ github.event_name }}"
         echo "Lanzado por: ${{ github.actor }}"
-    - name: Filtro de objeto
-      id: stepsContext
+    - name: Verificar OS y arquitectura
       run: |
-        echo "${{ toJSON(runner) }}"
-        
+        echo " Sistema operativo: ${{ runner.os }}"
+        echo " Arquitectura: ${{ runner.arch }}"
 
 
