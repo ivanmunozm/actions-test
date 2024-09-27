@@ -17,12 +17,12 @@ jobs:
     - name: Evento y actor
       id: eventoActor
       run: |
-        echo "${{ toJSON(github.event_name) }}"
-        echo "${{ toJSON(github.actor) }}"
+        echo "Evento disparador:${{ toJSON(github.event_name) }}"
+        echo "Lanzado por: ${{ toJSON(github.actor) }}"
     - name: Filtro de objeto
       id: stepsContext
       run: |
-        echo: "${{steps}}"
-        echo: "${{steps.*.conclusion}}"
+        echo "${{steps}}"
+        echo "${{steps.*.conclusion}}"
 
 
