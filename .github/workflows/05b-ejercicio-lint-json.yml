@@ -8,10 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: jsonlint
+    - uses: actions/checkout@v4
+    - name: check node version
+      run: node -v
+    - name: install jsonlint
       run: |
+        sudo apt-get update
         sudo apt-get install -y jsonlint
-    - name: lint
+    - name: lint json
       run: |
-        jsonlint-php package-lock.json
+        jsonlint-php package.json
    
