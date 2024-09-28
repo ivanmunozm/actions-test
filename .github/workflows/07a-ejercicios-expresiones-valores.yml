@@ -1,0 +1,20 @@
+name: Generar numero aleatorio
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  roll-the-dice:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generar número aleatorio
+        run: |
+          random_number=$((1 + RANDOM % 10))
+          echo "random_number=$RANDOM_NUMBER" >> "$GITHUB_ENV"
+
+      - name: Mostrar el número generado
+        run: |
+            echo "El valor del dado es: ${{ vars.RANDOM_NUMBER }}"
