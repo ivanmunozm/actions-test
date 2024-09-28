@@ -1,4 +1,4 @@
-name: Generar numero aleatorio
+name: 07a - Generar numero aleatorio
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  roll-the-dice:
+  numero-aleatorio:
     runs-on: ubuntu-latest
 
     steps:
