@@ -1,0 +1,31 @@
+name: 08a-control de flujo - matriz
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu 20.04, ubuntu-22.04]
+        version: [18, 20]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup node environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+      - run: npm ci
+      - run: npm test
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: |
+          echo "Desplegando en AWS........."
+
+
+      
+        
